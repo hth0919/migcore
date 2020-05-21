@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ca9cc68b-a180-4599-a630-c6e5b00fc54b" name="10.0.6.41" url="http://10.0.6.41">
+        <fileTransfer host="10.0.6.41" port="22" rootFolder="/root/go/src/crd/migration-pod" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="c5484fda-9c64-46a5-b580-182ba9cad7e2" name="corepkg" url="http://10.0.6.41">
+        <fileTransfer host="10.0.6.41" port="22" rootFolder="/root/go/src/crd/core" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="3c61b151-cf01-4166-b8fb-70219bd2d789" name="pod" url="http://10.0.6.41">
+        <fileTransfer host="10.0.6.41" port="22" rootFolder="/root/go/src/crd/migration/pod" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,7 @@
+apiVersion: keti.migration/v1
+kind: Pod
+metadata:
+  name: example-pod
+spec:
+  # Add fields here
+  size: 3
