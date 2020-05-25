@@ -16,7 +16,7 @@ spec:
       containers:
         - name: pod
           # Replace this with the built image name
-          image: REPLACE_IMAGE
+          image: hth0919/pod:v0.0.1
           command:
           - pod
           imagePullPolicy: Always

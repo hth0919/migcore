@@ -1,11 +1,13 @@
-kind: RoleBinding
+kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: pod
+  name: pods
 subjects:
-- kind: ServiceAccount
-  name: pod
+  - kind: ServiceAccount
+    name: pod
+    namespace: default
+    apiGroup: ""
 roleRef:
-  kind: Role
+  kind: ClusterRole
   name: pod
   apiGroup: rbac.authorization.k8s.io

@@ -2,6 +2,8 @@ package pod
 
 import (
 	"context"
+	"gopkg.in/yaml.v2"
+	"io/ioutil"
 
 	ketiv1 "github.com/hth0919/migcore/pkg/apis/keti/v1"
 	corev1 "k8s.io/api/core/v1"
@@ -17,6 +19,9 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/manager"
 	"sigs.k8s.io/controller-runtime/pkg/reconcile"
 	"sigs.k8s.io/controller-runtime/pkg/source"
+	"path/filepath"
+	"os"
+
 )
 
 var log = logf.Log.WithName("controller_pod")
@@ -85,6 +90,16 @@ type ReconcilePod struct {
 func (r *ReconcilePod) Reconcile(request reconcile.Request) (reconcile.Result, error) {
 	reqLogger := log.WithValues("Request.Namespace", request.Namespace, "Request.Name", request.Name)
 	reqLogger.Info("Reconciling Pod")
+	path := filepath.Join("/", "migpod")
+
+	if _, err := os.Stat(path); os.IsNotExist(err) {
+		err := os.Mkdir(path, os.ModePerm)
+		if err != nil {
+			return reconcile.Result{}, err
+		}
+	}
+
+
 
 	// Fetch the Pod instance
 	instance := &ketiv1.Pod{}
@@ -100,54 +115,18 @@ func (r *ReconcilePod) Reconcile(request reconcile.Request) (reconcile.Result, e
 		return reconcile.Result{}, err
 	}
 
-	// Define a new Pod object
-	pod := newPodForCR(instance)
-
-	// Set Pod instance as the owner and controller
-	if err := controllerutil.SetControllerReference(instance, pod, r.scheme); err != nil {
+	out, err := yaml.Marshal(instance)
+	if err != nil {
 		return reconcile.Result{}, err
 	}
-
-	// Check if this Pod already exists
-	found := &corev1.Pod{}
-	err = r.client.Get(context.TODO(), types.NamespacedName{Name: pod.Name, Namespace: pod.Namespace}, found)
-	if err != nil && errors.IsNotFound(err) {
-		reqLogger.Info("Creating a new Pod", "Pod.Namespace", pod.Namespace, "Pod.Name", pod.Name)
-		err = r.client.Create(context.TODO(), pod)
-		if err != nil {
-			return reconcile.Result{}, err
-		}
-
-		// Pod created successfully - don't requeue
-		return reconcile.Result{}, nil
-	} else if err != nil {
-		return reconcile.Result{}, err
+	filename := path + instance.Name + ".yaml"
+	err = ioutil.WriteFile(filename, out, 0)
+	if err != nil {
+		panic(err)
 	}
 
-	// Pod already exists - don't requeue
-	reqLogger.Info("Skip reconcile: Pod already exists", "Pod.Namespace", found.Namespace, "Pod.Name", found.Name)
 	return reconcile.Result{}, nil
 }
 
 // newPodForCR returns a busybox pod with the same name/namespace as the cr
-func newPodForCR(cr *ketiv1.Pod) *corev1.Pod {
-	labels := map[string]string{
-		"app": cr.Name,
-	}
-	return &corev1.Pod{
-		ObjectMeta: metav1.ObjectMeta{
-			Name:      cr.Name + "-pod",
-			Namespace: cr.Namespace,
-			Labels:    labels,
-		},
-		Spec: corev1.PodSpec{
-			Containers: []corev1.Container{
-				{
-					Name:    "busybox",
-					Image:   "busybox",
-					Command: []string{"sleep", "3600"},
-				},
-			},
-		},
-	}
-}
+
