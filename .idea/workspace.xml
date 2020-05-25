@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5754a314-a720-457d-9468-a21e1a685638" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/apis/keti/v1/register.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/apis/keti/v1/register.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy/crds/keti.migration_pods_crd.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/crds/keti.migration_pods_crd.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +44,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="go.vendoring.notification.had.been.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../kubelettest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -84,18 +82,18 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="873" y="360" key="#Build_Tags_&amp;_Vendoring/0.0.2560.1400@0.0.2560.1400" timestamp="1590025610844" />
-    <state x="873" y="360" key="#Deployment" timestamp="1590037692567">
+    <state x="873" y="360" key="#Deployment" timestamp="1590369346243">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="873" y="360" key="#Deployment/0.0.2560.1400@0.0.2560.1400" timestamp="1590037692567" />
+    <state x="873" y="360" key="#Deployment/0.0.2560.1400@0.0.2560.1400" timestamp="1590369346243" />
     <state x="873" y="360" key="#Go_Modules_(vgo)" timestamp="1589939972888">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="873" y="360" key="#Go_Modules_(vgo)/0.0.2560.1400@0.0.2560.1400" timestamp="1589939972888" />
-    <state x="93" y="93" width="2375" height="1215" key="DirDiffDialog" timestamp="1590038557226">
+    <state x="93" y="93" width="2375" height="1215" key="DirDiffDialog" timestamp="1590369447904">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="93" y="93" width="2375" height="1215" key="DirDiffDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1590038557226" />
+    <state x="93" y="93" width="2375" height="1215" key="DirDiffDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1590369447904" />
     <state x="1061" y="456" key="FileChooserDialogImpl" timestamp="1590035391331">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -108,14 +106,14 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1140" y="599" key="WebDeployment.AddServerDialog.v.1/0.0.2560.1400@0.0.2560.1400" timestamp="1589939240175" />
-    <state x="970" y="431" width="753" height="608" key="find.popup" timestamp="1590037767201">
+    <state x="970" y="431" width="753" height="608" key="find.popup" timestamp="1590041410535">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="970" y="431" width="753" height="608" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1590037767201" />
-    <state x="1120" y="432" key="ftp.server.browser" timestamp="1590037549244">
+    <state x="970" y="431" width="753" height="608" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1590041410535" />
+    <state x="1120" y="432" key="ftp.server.browser" timestamp="1590369342125">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1120" y="432" key="ftp.server.browser/0.0.2560.1400@0.0.2560.1400" timestamp="1590037549244" />
+    <state x="1120" y="432" key="ftp.server.browser/0.0.2560.1400@0.0.2560.1400" timestamp="1590369342125" />
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1590037622867">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

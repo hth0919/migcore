@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="ca9cc68b-a180-4599-a630-c6e5b00fc54b" name="10.0.6.41" url="http://10.0.6.41">
-        <fileTransfer host="10.0.6.41" port="22" rootFolder="/root/go/src/crd/migration-pod" accessType="SFTP">
+        <fileTransfer host="10.0.6.41" port="22" rootFolder="/root/go/src/crd/migration/pod" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
